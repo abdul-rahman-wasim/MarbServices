@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "501905820373",
+    "project_id": "marbservices-2022",
+    "storage_bucket": "marbservices-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501905820373:android:7e37bd356832803c8a705c",
+        "android_client_info": {
+          "package_name": "com.marbservices"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501905820373-lmp7s201p2mb187qnmonn4l2upjt8t9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8H30H9zgcMO4dTZmzTxjoPSlpImQkbHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501905820373-lmp7s201p2mb187qnmonn4l2upjt8t9h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
