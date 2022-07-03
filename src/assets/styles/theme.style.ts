@@ -14,4 +14,5 @@ export default {
   COLOR_GREEN: '#007a56',
   COLOR_BLUE: '#0f224c',
   COLOR_GREY: '#e8e8e8',
+  COLOR_YELLOW: '#ffb600',
 };

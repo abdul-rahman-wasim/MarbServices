@@ -34,13 +34,7 @@ export const AppRoutes = () => {
         }}
       />
       <Stack.Screen name={route.CHOOSESERVICE} component={ChooseService} />
-      <Stack.Screen
-        name={route.SELECTPROVIDER}
-        component={SelectProvider}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name={route.SELECTPROVIDER} component={SelectProvider} />
     </Stack.Navigator>
   );
 };
