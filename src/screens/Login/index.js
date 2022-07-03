@@ -1,6 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
 import React, {useLayoutEffect, useState} from 'react';
-import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
+import {Alert, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -27,7 +28,20 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPass, setShowPass] = useState(true);
-  const handleClick = () => {};
+  const handleLogin = async () => {
+    if (email.length && password.length) {
+      auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(val => {
+          navigation.replace(route.CHOOSESERVICE);
+        })
+        .catch(error => {
+          Alert.alert(error.toString());
+        });
+    } else {
+      Alert.alert('Fill all fields');
+    }
+  };
 
   return (
     <SafeAreaView style={style.container}>
@@ -62,9 +76,7 @@ const Login = () => {
             />
           </View>
           <View style={style.btnContainer}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate(route.SELECTPROVIDER)}
-              style={style.btn}>
+            <TouchableOpacity onPress={() => handleLogin()} style={style.btn}>
               <Text style={style.text}>Log In</Text>
             </TouchableOpacity>
           </View>
