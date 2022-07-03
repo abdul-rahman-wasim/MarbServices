@@ -33,13 +33,7 @@ export const AppRoutes = () => {
           headerShown: false,
         }}
       />
-      <Stack.Screen
-        name={route.CHOOSESERVICE}
-        component={ChooseService}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name={route.CHOOSESERVICE} component={ChooseService} />
       <Stack.Screen
         name={route.SELECTPROVIDER}
         component={SelectProvider}
