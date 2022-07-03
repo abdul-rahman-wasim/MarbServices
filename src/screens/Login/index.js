@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {useLayoutEffect, useState} from 'react';
 import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {TextInput} from 'react-native-paper';
-
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import style from './style';
 import themeStyle from '../../assets/styles/theme.style';
@@ -31,40 +31,45 @@ const Login = () => {
 
   return (
     <SafeAreaView style={style.container}>
-      <View style={style.mainContainer}>
-        <Text style={style.heading}>Login</Text>
+      <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
+        <View style={style.mainContainer}>
+          <Text style={style.heading}>Login</Text>
 
-        <View style={style.mainContainer2}>
-          <TextInput
-            mode="outlined"
-            label="Email"
-            placeholder="Type your email"
-            value={email}
-            onChangeText={text => setEmail(text)}
-          />
-          <TextInput
-            mode="outlined"
-            label="Password"
-            placeholder="Type your password"
-            value={password}
-            secureTextEntry={showPass}
-            right={
-              <TextInput.Icon
-                onPress={() => setShowPass(!showPass)}
-                name="eye"
+          <View style={style.mainContainer2}>
+            <View style={{marginBottom: '2%', paddingTop: '30%'}}>
+              <TextInput
+                mode="flat"
+                label="Email"
+                placeholder="Type your email"
+                value={email}
+                onChangeText={text => setEmail(text)}
               />
-            }
-            onChangeText={text => setPassword(text)}
-          />
+            </View>
+
+            <TextInput
+              mode="flat"
+              label="Password"
+              placeholder="Type your password"
+              value={password}
+              secureTextEntry={showPass}
+              right={
+                <TextInput.Icon
+                  onPress={() => setShowPass(!showPass)}
+                  name="eye"
+                />
+              }
+              onChangeText={text => setPassword(text)}
+            />
+          </View>
+          <View style={style.btnContainer}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate(route.SELECTPROVIDER)}
+              style={style.btn}>
+              <Text style={style.text}>Log In</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-      <View style={style.btnContainer}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate(route.SELECTPROVIDER)}
-          style={style.btn}>
-          <Text style={style.text}>Log In</Text>
-        </TouchableOpacity>
-      </View>
+      </KeyboardAwareScrollView>
     </SafeAreaView>
   );
 };
