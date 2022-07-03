@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {LogBox} from 'react-native';
 import {AppRoutes} from './src/navigation';
-import {LoginOrRegister} from './src/screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {Provider as PaperProvider} from 'react-native-paper';
 
 const App = () => {
   useEffect(() => {
@@ -11,10 +11,11 @@ const App = () => {
   }, []);
   return (
     <NavigationContainer>
-      <SafeAreaProvider style={{backgroundColor: 'white'}}>
-        {/* <LoginOrRegister></LoginOrRegister> */}
-        <AppRoutes />
-      </SafeAreaProvider>
+      <PaperProvider>
+        <SafeAreaProvider style={{backgroundColor: 'white'}}>
+          <AppRoutes />
+        </SafeAreaProvider>
+      </PaperProvider>
     </NavigationContainer>
   );
 };
