@@ -9,7 +9,7 @@ const LoginOrRegister = () => {
   return (
     <SafeAreaView style={style.container}>
       <TouchableOpacity
-        onPress={() => navigation.navigate(route.CHOOSESERVICE)}
+        onPress={() => navigation.navigate(route.LOGIN)}
         style={style.btn}>
         <Text style={style.text}>Login</Text>
       </TouchableOpacity>

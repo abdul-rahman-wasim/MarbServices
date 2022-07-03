@@ -4,10 +4,11 @@ import themeStyle from '../../assets/styles/theme.style';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: '50%',
+    paddingTop: '70%',
+    backgroundColor: themeStyle.COLOR_BLACK,
   },
   btn: {
-    backgroundColor: 'lightgreen',
+    backgroundColor: themeStyle.COLOR_GREEN,
     height: 70,
     width: '80%',
     borderRadius: 40,

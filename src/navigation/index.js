@@ -19,20 +19,8 @@ export const AppRoutes = () => {
         component={LoginOrRegister}
         options={{headerShown: false}}
       />
-      <Stack.Screen
-        name={route.LOGIN}
-        component={Login}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name={route.REGISTER}
-        component={Register}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name={route.LOGIN} component={Login} />
+      <Stack.Screen name={route.REGISTER} component={Register} />
       <Stack.Screen name={route.CHOOSESERVICE} component={ChooseService} />
       <Stack.Screen name={route.SELECTPROVIDER} component={SelectProvider} />
     </Stack.Navigator>
